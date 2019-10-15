@@ -40,6 +40,10 @@ skinparam rectangle<<boundary>> {
     BorderStyle dashed
 }
 
+skinparam actor {
+    Shadowing false
+}
+
 ' Layout
 ' ##################################
 

@@ -57,13 +57,13 @@ Colors can help to add additional information or simply to make the diagram more
 It can also help to save some space.
 
 All of that is the reason, C4-PlantUML uses colors and prefer also to enable a layout without `<<stereotypes>>` and with a legend.
-This can be enabled with `LAYOUT_WITH_LEGEND`.
+This can be enabled with `LAYOUT_WITH_LEGEND()`.
 
 ```csharp
 @startuml LAYOUT_WITH_LEGEND Sample
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
 
-LAYOUT_WITH_LEGEND
+LAYOUT_WITH_LEGEND()
 
 Person(admin, "Administrator")
 System_Boundary(c1, 'Sample') {

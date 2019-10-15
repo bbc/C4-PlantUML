@@ -16,21 +16,17 @@ C4-PlantUML includes macros, stereotypes, and other goodies (like VSCode Snippet
 
 ## Getting Started
 
-At the top of your C4 PlantUML `.puml` file, you need to include the `C4_Context.puml`, `C4_Container.puml` or `C4_Component.puml` file found in the `root` of this repo.
+Clone this repository locally.
 
-To be independent of any internet connectifity, you can also download the files found in the `root` and reference it locally with
+In your architecture diagraming project, at the top of your C4 PlantUML `.puml` or `.plantuml` file, you need to include the `C4_Context.puml`, `C4_Container.puml` or `C4_Component.puml` file found in the `root` of this repo.
+
+Reference it locally in each file with:
 
 ```c#
 !include path/to/C4_Container.puml
 ```
 
-Just remember to change the `!include` statements inside the top of the files.
-
-If you want to use the always up-to-date version in this repo, use the following:
-
-```c#
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
-```
+This can be relative to your current directory (as we've done in the samples), or an absolute path to the cloned repository.
 
 Now let's create a C4 Container diagram:
 
@@ -38,7 +34,7 @@ After you have included `C4_Container.puml` you can use the defined macro defini
 
 ```csharp
 @startuml C4_Elements
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+!include /absolute/path/to/C4_Container.puml
 
 Person(personAlias, "Label", "Optional Description")
 Container(containerAlias, "Label", "Technology", "Optional Description")
@@ -56,7 +52,7 @@ Take a look a look at the following sample of a C4 Container Diagram:
 
 ```csharp
 @startuml Basic Sample
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+!include /absolute/path/to/C4_Container.puml
 
 Person(admin, "Administrator")
 System_Boundary(c1, "Sample System") {
@@ -74,13 +70,13 @@ Rel(web_app, twitter, "Gets tweets from", "HTTPS")
 ## Supported Diagram Types
 
 * System Context & System Landscape diagrams
-  * Import: `!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Context.puml`
+  * Import: `!include path/to/C4_Context.puml`
   * Macros: `Person`, `Person_Ext`, `System`, `System_Ext`, `SystemDb`, `SystemDb_Ext`, `Boundary`, `System_Boundary`, `Enterprise_Boundary`
 * Container diagram
-  * Import: `!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml`
+  * Import: `!include path/to/C4_Container.puml`
   * Additional Macros: `Container`, `ContainerDb`, `Container_Boundary`
 * Component diagram
-  * Import: `!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Component.puml`
+  * Import: `!include path/to/C4_Component.puml`
   * Additional Macros: `Component`, `ComponentDb`
 
 Take a look at each of the [C4 Model Diagram Samples](samples/C4CoreDiagrams.md).
@@ -101,7 +97,7 @@ It is possible to save them directly inside VS Code: [Creating your own snippets
 C4-PlantUML also comes with some layout options to make it easy and reuseable to create nice and useful diagrams:
 
 * [LAYOUT_TOP_DOWN or LAYOUT_LEFT_RIGHT](LayoutOptions.md#layout_top_down-or-layout_left_right)
-* [LAYOUT_WITH_LEGEND](LayoutOptions.md#layout_with_legend)
+* [LAYOUT_WITH_LEGEND()](LayoutOptions.md#layout_with_legend)
 * [LAYOUT_AS_SKETCH](LayoutOptions.md#layout_as_sketch)
 
 ## Advanced Samples
